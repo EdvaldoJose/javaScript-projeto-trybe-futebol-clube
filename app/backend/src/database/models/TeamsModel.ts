@@ -10,6 +10,7 @@ Teams.init({
   id: {
     type: INTEGER,
     allowNull: false,
+    primaryKey: true,
     autoIncrement: true,
   },
   teamName: {
