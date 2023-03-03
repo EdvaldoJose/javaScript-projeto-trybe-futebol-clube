@@ -13,6 +13,7 @@ chai.use(chaiHttp);
 const { app } = new App();
 
 const { expect } = chai;
+
 describe('Testando rotas de times', () => {
   it('Deve retornar todos os times e o status "200"', async () => {
     const httpResponse = await chai.request(app).post('/teams')
