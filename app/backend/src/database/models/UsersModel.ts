@@ -14,7 +14,7 @@ Users.init({
     type: INTEGER,
     allowNull: false,
     primaryKey: true,
-    autoIncrement: true
+    autoIncrement: true,
   },
   username: {
     type: STRING(100),
