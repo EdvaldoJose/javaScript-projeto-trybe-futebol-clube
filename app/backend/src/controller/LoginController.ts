@@ -18,7 +18,8 @@ export default class LoginController {
   async validate(req: Request, res: Response) {
     const { authorization } = req.headers as any;
 
-    const { id }: Record<string, string> = jwt.verify(authorization,
+    const { id }: Record<string, string> = jwt.verify(
+      authorization,
       process.env.JWT_SECRET as string,
     ) as Record<string, string>;
 

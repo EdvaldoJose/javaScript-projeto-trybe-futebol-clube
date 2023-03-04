@@ -2,7 +2,11 @@ import { ErrorRequestHandler } from 'express';
 import CustomError from '../utils/statusError';
 
 const middlewareError: ErrorRequestHandler = (
-  err: CustomError & Error, _req, res, _next) => {
+  err: CustomError & Error,
+  _req,
+  res,
+  _next,
+) => {
   if (err.statusCode) {
     return res.status(err.statusCode).json({ message: err.message });
   }
