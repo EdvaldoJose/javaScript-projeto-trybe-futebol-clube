@@ -19,12 +19,12 @@ export default class LoginService {
 
     const checkUserExist = await this.findUserByEmail(email);
     if (!checkUserExist) {
-      throw new CustomError('Invalid email or password', 401);
+      throw new CustomError('Incorrect email or password', 401);
     }
 
     const verifyPassword = await compare(password, checkUserExist.password);
     if (!verifyPassword) {
-      throw new CustomError('Invalid email or password', 401);
+      throw new CustomError('Incorrect email or password', 401);
     }
 
     const token = generationToken(checkUserExist.id, checkUserExist.role);
