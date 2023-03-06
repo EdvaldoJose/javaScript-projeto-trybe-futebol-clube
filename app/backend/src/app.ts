@@ -3,7 +3,8 @@ import * as express from 'express';
 import teamRouter from './routes/team.route';
 import loginRouter from './routes/login.route';
 import middlewareError from './middlewares/middlewareError';
-import matchesRouter from './routes
+import matchesRouter from './routes/matche.route';
+
 class App {
   public app: express.Express;
 
