@@ -15,14 +15,14 @@ const { app } = new App();
 const { expect } = chai;
 
 describe('Testando rotas de times', () => {
-  it('Deve retornar todos os times e o status "200"', async () => {
+  it('Retornar todos os times e o status "200"', async () => {
     const httpResponse = await chai.request(app).post('/teams')
 
     expect(httpResponse.status).to.be.equal(200);
       // expect(httpResponse.body).to.deep.equal({ message: 'All fields must be filled' });
   });
 
-  it('Deve retornar todos um times e o status "200"', async () => {
+  it('Retornar todos um times e o status "200"', async () => {
     const httpResponse = await chai.request(app).post('/teams/1')
 
     expect(httpResponse.status).to.be.equal(200);

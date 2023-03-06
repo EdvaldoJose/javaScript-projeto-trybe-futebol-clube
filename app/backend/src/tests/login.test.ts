@@ -27,7 +27,7 @@ describe('Testando autenticacao do usuario', () => {
 
     it('Retorna um status "401" ao enviar um email de usuario inexistente', async () => {
       const httpResponse = await chai.request(app).post('/login').send({
-        email: 'batman@gamil.com',
+        email: 'batman@gmail.com',
         password: 'trybe_123456',
       });
 
@@ -37,7 +37,7 @@ describe('Testando autenticacao do usuario', () => {
 
     it('Retorna um status "401" ao enviar uma senha de usuario invalido', async () => {
       const httpResponse = await chai.request(app).post('/login').send({
-        email: 'user@user.com.br',
+        email: 'user@user.com',
         password: 'trybe_123456',
       });
 
