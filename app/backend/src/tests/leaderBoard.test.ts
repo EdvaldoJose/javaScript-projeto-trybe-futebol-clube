@@ -20,26 +20,26 @@ describe('Testando as rotas de learderboard', () => {
 
       expect(httpResponse.status).to.be.equal(200);
       expect(httpResponse.body[0]).to.be.equal({
-        name: "Santos",
-        totalPoints: 11,
-        totalGames: 5,
-        totalVictories: 3,
-        totalDraws: 2,
-        totalLosses: 0,
-        goalsFavor: 12,
-        goalsOwn: 6,
-        goalsBalance: 6,
-        efficiency: 73.33
         // name: "Santos",
-    // totalPoints: 9,
-    // totalGames: 3,
-    // totalVictories: 3,
-    // totalDraws: 0,
-    // totalLosses: 0,
-    // goalsFavor: 9,
-    // goalsOwn: 3,
-    // goalsBalance: 6,
-    // efficiency: 100.00
+        // totalPoints: 11,
+        // totalGames: 5,
+        // totalVictories: 3,
+        // totalDraws: 2,
+        // totalLosses: 0,
+        // goalsFavor: 12,
+        // goalsOwn: 6,
+        // goalsBalance: 6,
+        // efficiency: 73.33
+    name: "Santos",
+    totalPoints: 9,
+    totalGames: 3,
+    totalVictories: 3,
+    totalDraws: 0,
+    totalLosses: 0,
+    goalsFavor: 9,
+    goalsOwn: 3,
+    goalsBalance: 6,
+    efficiency: 100.00
     },
     )
   });
