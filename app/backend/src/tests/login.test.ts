@@ -21,7 +21,7 @@ describe('Testando autenticacao do usuario', () => {
         password: 'trybe_123456',
       });
 
-      expect(httpResponse.status).to.be.equal(400);
+      expect(httpResponse.status).to.be.equal(401);
       expect(httpResponse.body).to.deep.equal({ message: 'All fields must be filled' });
     });
 

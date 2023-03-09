@@ -19,12 +19,12 @@ export default class LoginService {
 
     const checkUserExist = await this.findUserByEmail(email);
     if (!checkUserExist) {
-      throw new CustomError('Incorrect email or password', 401);
+      throw new CustomError('Invalid email or password', 401);
     }
 
     const verifyPassword = await compare(password, checkUserExist.password);
     if (!verifyPassword) {
-      throw new CustomError('Incorrect email or password', 401);
+      throw new CustomError('Invalid email or password', 401);
     }
 
     const token = generationToken(checkUserExist.id, checkUserExist.role);
@@ -33,6 +33,7 @@ export default class LoginService {
 
   async validate(id: number): Promise<string> {
     const { role } = await this.model.findByPk(id) as IUser;
+
     return role;
   }
 }

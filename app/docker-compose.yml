@@ -18,7 +18,7 @@ services:
     container_name: app_backend
     build: ./backend
     ports:
-      - 3003:3003
+      - 3001:3001
     platform: linux/x86_64
     working_dir: /app-backend
     # Caso queira que o container esteja atualizado durante o desenvolvimento, sem que você precise ficar fazendo down e up dos containers, descomente as 3 linhas abaixo

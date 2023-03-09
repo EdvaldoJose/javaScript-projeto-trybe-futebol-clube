@@ -17,9 +17,16 @@ const loginShema = Joi.object({
 
 const validateLogin = async (req: Request, res: Response, next: NextFunction) => {
   const { error } = loginShema.validate(req.body);
+  const { email } = req.body;
+
+  if (email.length === 0) {
+    return res.status(400).json({ message: error?.message });
+  }
+
+  console.log(error);
 
   if (error) {
-    return res.status(400).json({ message: error.message });
+    return res.status(401).json({ message: error.message });
   }
   next();
 };
