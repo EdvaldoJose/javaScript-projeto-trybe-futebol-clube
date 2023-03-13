@@ -12,6 +12,7 @@ export default class LeaderBoardService extends MatchesService {
     const allMatches = await this.getAllFilted(false);
     const filterMatches = allMatches
       .filter((currMatche: IMatches) => currMatche[this.type] === team.id);
+    console.log(filterMatches);
     return filterMatches;
   }
 
@@ -59,7 +60,9 @@ export default class LeaderBoardService extends MatchesService {
     const efficiency = Number(((totalPoints / (totalGames * 3)) * 100).toFixed(2));
 
     const result = { goalsFavor, goalsOwn, goalsBalance, efficiency, totalLosses };
-
+    console.log({
+      name: team.teamName, totalPoints, totalGames, totalVictories, totalDraws, ...result,
+    }, 'RESULTADO');
     return {
       name: team.teamName, totalPoints, totalGames, totalVictories, totalDraws, ...result,
     };
