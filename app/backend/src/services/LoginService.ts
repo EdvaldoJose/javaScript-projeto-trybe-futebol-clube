@@ -28,6 +28,9 @@ export default class LoginService {
     }
 
     const token = generationToken(checkUserExist.id, checkUserExist.role);
+    // if (!token) {
+    //   throw new CustomError('Invalid token', 401);
+    // }
     return token;
   }
 

@@ -9,8 +9,8 @@ export interface IMatches {
   awayTeamGoals: number;
   homeTeamGoals: number;
   inProgress: boolean;
-  teamHome?: ITeamHomeAway;
-  teamAway?: ITeamHomeAway;
+  homeTeam?: ITeamHomeAway;
+  awayTeam?: ITeamHomeAway;
 }
 
 export interface IAddMatches {

@@ -6,7 +6,7 @@ const tokenValidation = (req: Request, res: Response, next: NextFunction) => {
   const { authorization } = req.headers;
 
   if (!authorization) {
-    throw new CustomError('Token not found', 404);
+    throw new CustomError('Token not found', 401); // 404
   }
 
   try {

@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       home_team_id: {
+        name: 'home_team_id',
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {

@@ -10,11 +10,11 @@ export default class MatchesService {
   async getAll(): Promise<IMatches[]> {
     const matches = await this.matchesModel.findAll({
       include: [
-        { model: Teams, as: 'teamHome', attributes: { exclude: ['id'] } },
-        { model: Teams, as: 'teamAway', attributes: { exclude: ['id'] } },
+        { model: Teams, as: 'homeTeam', attributes: { exclude: ['id'] } },
+        { model: Teams, as: 'awayTeam', attributes: { exclude: ['id'] } },
       ],
     });
-
+    console.log(matches);
     return matches;
   }
 
@@ -22,8 +22,8 @@ export default class MatchesService {
     const matches = await this.matchesModel.findAll({
       where: { inProgress },
       include: [
-        { model: Teams, as: 'teamHome', attributes: { exclude: ['id'] } },
-        { model: Teams, as: 'teamAway', attributes: { exclude: ['id'] } },
+        { model: Teams, as: 'homeTeam', attributes: { exclude: ['id'] } },
+        { model: Teams, as: 'awayTeam', attributes: { exclude: ['id'] } },
       ],
     });
 
