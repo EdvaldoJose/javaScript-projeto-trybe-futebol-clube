@@ -5,12 +5,11 @@ import Joi = require('joi');
 import CustomError from '../utils/statusError';
 
 // const MESSAGE_ERROR = 'Invalid email or password';
-
 // const loginShema = Joi.object({
 //   email: Joi.string().email().required(),
 //   password: Joi.string().min(6).required(),
-
 // }).error();
+
 const loginShema = Joi.object({
   email: Joi.string().email().required().error(new Error('Invalid email or password')),
   password: Joi.string().min(6).required().error(new Error('Invalid email or password')),
